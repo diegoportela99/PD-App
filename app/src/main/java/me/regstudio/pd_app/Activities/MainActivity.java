@@ -131,29 +131,18 @@ public class MainActivity extends AppCompatActivity {
                                     currentState = MenuStates.DATA_PACKET;
                                 }
                                 break;
-                            case R.id.nav_heartrate:
-                                if (currentState != MenuStates.HEARTRATE) {
-                                    ChangeFragment(new HeartRateFragment());
-                                    currentState = MenuStates.HEARTRATE;
-                                }
-                                break;
-                            case R.id.nav_recordvideo:
-                                if (currentState != MenuStates.RECORD_VIDEO) {
-                                    ChangeFragment(new RecordVideoFragment());
-                                    currentState = MenuStates.RECORD_VIDEO;
-                                }
-                                break;
-                            case R.id.nav_sendfile:
-                                if (currentState != MenuStates.SEND_FILE) {
-                                    ChangeFragment(new SendFileFragment());
-                                    currentState = MenuStates.SEND_FILE;
-                                }
-                                break;
                             case R.id.nav_map:
                                 if (currentState != MenuStates.NAVIGATION_MAP) {
                                     ChangeFragment(new MapFragment());
                                     currentState = MenuStates.NAVIGATION_MAP;
                                 }
+                                break;
+
+                            case R.id.nav_logout:
+                                //add logout code here
+
+
+
                                 break;
                         }
 
