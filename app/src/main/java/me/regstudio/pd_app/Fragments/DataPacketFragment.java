@@ -11,7 +11,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import me.regstudio.pd_app.Activities.HeartRate;
 import me.regstudio.pd_app.Activities.MainActivity;
+import me.regstudio.pd_app.Activities.RecordVideo;
+import me.regstudio.pd_app.Activities.SelectDoctor;
+import me.regstudio.pd_app.Activities.SendFile;
+import me.regstudio.pd_app.Activities.WriteMessage;
 import me.regstudio.pd_app.R;
 
 /**
@@ -50,7 +55,8 @@ public class DataPacketFragment extends Fragment {
                 // click handling code
                 Toast.makeText(getActivity(), "test button",
                         Toast.LENGTH_LONG).show();
-                obj.sendFile();
+
+                sendFile();
             }
         });
 
@@ -60,7 +66,8 @@ public class DataPacketFragment extends Fragment {
                 // click handling code
                 Toast.makeText(getActivity(), "test button",
                         Toast.LENGTH_LONG).show();
-                obj.recordVideo();
+
+                recordVideo();
             }
         });
 
@@ -70,6 +77,7 @@ public class DataPacketFragment extends Fragment {
                 // click handling code
                 Toast.makeText(getActivity(), "test button",
                         Toast.LENGTH_LONG).show();
+
 
             }
         });
@@ -81,7 +89,7 @@ public class DataPacketFragment extends Fragment {
                 Toast.makeText(getActivity(), "test button",
                         Toast.LENGTH_LONG).show();
 
-                obj.selectDoctor();
+                selectDoctor();
             }
         });
 
@@ -92,7 +100,7 @@ public class DataPacketFragment extends Fragment {
                 Toast.makeText(getActivity(), "test button",
                         Toast.LENGTH_LONG).show();
 
-                obj.heartRate();
+                heartRate();
             }
         });
 
@@ -103,7 +111,7 @@ public class DataPacketFragment extends Fragment {
                 Toast.makeText(getActivity(), "test button",
                         Toast.LENGTH_LONG).show();
 
-                obj.writeMessage();
+                writeMessage();
             }
         });
 
@@ -111,6 +119,75 @@ public class DataPacketFragment extends Fragment {
     }
 
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        if (requestCode == 1) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result=data.getStringExtra("result");
+
+
+            }
+        }
+
+        if (requestCode == 2) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result=data.getStringExtra("result");
+
+
+            }
+        }
+
+        if (requestCode == 3) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result=data.getStringExtra("result");
+
+
+            }
+        }
+
+        if (requestCode == 4) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result=data.getStringExtra("result");
+
+
+            }
+        }
+
+        if (requestCode == 5) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result=data.getStringExtra("result");
+
+
+            }
+        }
+
+
+    }
+
+    public void sendFile() {
+        Intent SendFile = new Intent(getActivity(), SendFile.class);
+        startActivityForResult(SendFile, 1);
+    }
+
+    public void recordVideo() {
+        Intent RecordVideo = new Intent(getActivity(), RecordVideo.class);
+        startActivityForResult(RecordVideo, 2);
+    }
+
+    public void heartRate() {
+        Intent HeartRate = new Intent(getActivity(), HeartRate.class);
+        startActivityForResult(HeartRate, 3);
+    }
+
+    public void selectDoctor() {
+        Intent SelectDoctor = new Intent(getActivity(), SelectDoctor.class);
+        startActivityForResult(SelectDoctor, 4);
+    }
+
+    public void writeMessage() {
+        Intent WriteMessage = new Intent(getActivity(), WriteMessage.class);
+        startActivityForResult(WriteMessage, 5);
+    }
 
 }
