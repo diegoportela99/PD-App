@@ -20,11 +20,8 @@ import android.view.View;
 
 
 import me.regstudio.pd_app.Fragments.DataPacketFragment;
-import me.regstudio.pd_app.Fragments.HeartRateFragment;
 import me.regstudio.pd_app.Fragments.MapFragment;
 import me.regstudio.pd_app.Fragments.PatientInformationFragment;
-import me.regstudio.pd_app.Fragments.RecordVideoFragment;
-import me.regstudio.pd_app.Fragments.SendFileFragment;
 import me.regstudio.pd_app.R;
 
 

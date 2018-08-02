@@ -17,6 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.MainActivity"></activity>
+        <activity android:name=".Activities.RecordVideo"></activity>
+        <activity android:name=".Activities.SendFile"></activity>
+        <activity android:name=".Activities.HeartRate"></activity>
+        <activity android:name=".Activities.WriteMessage"></activity>
+        <activity android:name=".Activities.SelectDoctor"></activity>
     </application>
 
 </manifest>

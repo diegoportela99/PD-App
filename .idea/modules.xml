@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://C:\Users\diego\Desktop\Software Dev\git-App2\App1B.iml" filepath="C:\Users\diego\Desktop\Software Dev\git-App2\App1B.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/git-App2.iml" filepath="$PROJECT_DIR$/git-App2.iml" />
     </modules>
