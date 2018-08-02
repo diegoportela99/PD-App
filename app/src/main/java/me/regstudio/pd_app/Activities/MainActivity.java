@@ -1,9 +1,11 @@
 package me.regstudio.pd_app.Activities;
 
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -217,5 +219,78 @@ public class MainActivity extends AppCompatActivity {
         transaction.replace(R.id.fragment_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 1) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result=data.getStringExtra("result");
+
+
+            }
+        }
+
+        if (requestCode == 2) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result=data.getStringExtra("result");
+
+
+            }
+        }
+
+        if (requestCode == 3) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result=data.getStringExtra("result");
+
+
+            }
+        }
+
+        if (requestCode == 4) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result=data.getStringExtra("result");
+
+
+            }
+        }
+
+        if (requestCode == 5) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result=data.getStringExtra("result");
+
+
+            }
+        }
+
+
+    }
+
+    public void sendFile() {
+        Intent SendFile = new Intent(MainActivity.this, SendFileFragment.class);
+        startActivityForResult(SendFile, 1);
+    }
+
+    public void recordVideo() {
+        Intent RecordVideo = new Intent(MainActivity.this, RecordVideoFragment.class);
+        startActivityForResult(RecordVideo, 2);
+    }
+
+    public void heartRate() {
+        Intent HeartRate = new Intent(MainActivity.this, HeartRateFragment.class);
+        startActivityForResult(HeartRate, 3);
+    }
+
+    public void selectDoctor() {
+//        Intent SelectDoctor = new Intent(MainActivity.this, personInformation.class);
+//        startActivityForResult(SelectDoctor, 4);
+    }
+
+    public void writeMessage() {
+//        Intent WriteMessage = new Intent(MainActivity.this, personInformation.class);
+//        startActivityForResult(WriteMessage, 5);
     }
 }

@@ -1,7 +1,9 @@
 package me.regstudio.pd_app.Fragments;
 
 
+import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import me.regstudio.pd_app.Activities.MainActivity;
 import me.regstudio.pd_app.R;
 
 /**
@@ -16,6 +19,8 @@ import me.regstudio.pd_app.R;
  */
 public class DataPacketFragment extends Fragment {
 
+
+    private MainActivity obj;
 
     public DataPacketFragment() {
         // Required empty public constructor
@@ -45,6 +50,7 @@ public class DataPacketFragment extends Fragment {
                 // click handling code
                 Toast.makeText(getActivity(), "test button",
                         Toast.LENGTH_LONG).show();
+                obj.sendFile();
             }
         });
 
@@ -54,6 +60,7 @@ public class DataPacketFragment extends Fragment {
                 // click handling code
                 Toast.makeText(getActivity(), "test button",
                         Toast.LENGTH_LONG).show();
+                obj.recordVideo();
             }
         });
 
@@ -63,6 +70,7 @@ public class DataPacketFragment extends Fragment {
                 // click handling code
                 Toast.makeText(getActivity(), "test button",
                         Toast.LENGTH_LONG).show();
+
             }
         });
 
@@ -72,6 +80,8 @@ public class DataPacketFragment extends Fragment {
                 // click handling code
                 Toast.makeText(getActivity(), "test button",
                         Toast.LENGTH_LONG).show();
+
+                obj.selectDoctor();
             }
         });
 
@@ -81,6 +91,8 @@ public class DataPacketFragment extends Fragment {
                 // click handling code
                 Toast.makeText(getActivity(), "test button",
                         Toast.LENGTH_LONG).show();
+
+                obj.heartRate();
             }
         });
 
@@ -90,10 +102,15 @@ public class DataPacketFragment extends Fragment {
                 // click handling code
                 Toast.makeText(getActivity(), "test button",
                         Toast.LENGTH_LONG).show();
+
+                obj.writeMessage();
             }
         });
 
         return view;
     }
+
+
+
 
 }
