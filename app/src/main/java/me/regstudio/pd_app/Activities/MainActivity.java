@@ -79,6 +79,9 @@ public class MainActivity extends AppCompatActivity {
     private MenuStates currentState;
 
 
+    public static String DoctorSelectedID;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -214,5 +217,9 @@ public class MainActivity extends AppCompatActivity {
         transaction.replace(R.id.fragment_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    public void selectDoctor(String doc) {
+        this.DoctorSelectedID = doc;
     }
 }

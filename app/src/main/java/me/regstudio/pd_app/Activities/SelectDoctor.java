@@ -11,11 +11,17 @@ import me.regstudio.pd_app.R;
  */
 
 public class SelectDoctor extends AppCompatActivity {
+    MainActivity obj;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_doc);
 
 
+    }
+
+    protected void selectDoc(String doc) {
+        obj.selectDoctor(doc);
     }
 }
