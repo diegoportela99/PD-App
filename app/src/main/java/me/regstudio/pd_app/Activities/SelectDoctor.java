@@ -1,5 +1,6 @@
 package me.regstudio.pd_app.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -32,7 +33,10 @@ public class SelectDoctor extends AppCompatActivity {
         DocButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent returnIntent = getIntent();
+                returnIntent.putExtra("result",1);
+                setResult(RESULT_CANCELED,returnIntent);
+                finish();
             }
         });
     }
@@ -41,4 +45,15 @@ public class SelectDoctor extends AppCompatActivity {
     protected void selectDoc(String doc) {
         obj.selectDoctor(doc);
     }
+
+
+
+//    private void result (int x) {
+//        if (x == 1) {
+//            Intent returnIntent = getIntent();
+//            returnIntent.putExtra("result",x);
+//            setResult(RESULT_OK,returnIntent);
+//            finish();
+//        }
+//    }
 }

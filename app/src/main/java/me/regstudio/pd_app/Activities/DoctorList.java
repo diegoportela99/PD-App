@@ -17,6 +17,6 @@ public class DoctorList extends AppCompatActivity {
         setContentView(R.layout.doctor_list);
         setTitle("Doctor List");
 
-        
+
     }
 }
