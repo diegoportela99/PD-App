@@ -1,5 +1,6 @@
 package me.regstudio.pd_app.Activities;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -47,13 +48,11 @@ public class SelectDoctor extends AppCompatActivity {
     }
 
 
-
-//    private void result (int x) {
-//        if (x == 1) {
+    //if backbutton pressed, then use this method bellow
 //            Intent returnIntent = getIntent();
-//            returnIntent.putExtra("result",x);
+//            returnIntent.putExtra("result",1);
 //            setResult(RESULT_OK,returnIntent);
 //            finish();
-//        }
-//    }
+
+
 }
