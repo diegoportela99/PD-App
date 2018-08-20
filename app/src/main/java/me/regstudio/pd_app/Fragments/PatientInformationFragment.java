@@ -28,8 +28,8 @@ public class PatientInformationFragment extends Fragment {
 
 
     // Note how Butter Knife also works on Fragments, but here it is a little different
-    @BindView(R.id.blank_frag_msg)
-    TextView blankFragmentTV;
+    //@BindView(R.id.frameLayout2)
+    //TextView blankFragmentTV;
 
 
     public PatientInformationFragment() {
@@ -61,6 +61,6 @@ public class PatientInformationFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         // Now that the view has been created, we can use butter knife functionality
-        blankFragmentTV.setText("Welcome to this fragment");
+        //blankFragmentTV.setText("Welcome to this fragment");
     }
 }
