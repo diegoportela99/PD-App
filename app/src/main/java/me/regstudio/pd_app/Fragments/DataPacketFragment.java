@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import me.regstudio.pd_app.Activities.DoctorList;
 import me.regstudio.pd_app.Activities.HeartRate;
 import me.regstudio.pd_app.Activities.MainActivity;
 import me.regstudio.pd_app.Activities.RecordVideo;
@@ -152,6 +153,12 @@ public class DataPacketFragment extends Fragment {
 
 
             }
+
+            if (resultCode == Activity.RESULT_CANCELED) {
+                String result=data.getStringExtra("result");
+
+                Doctorlist();
+            }
         }
 
         if (requestCode == 5) {
@@ -162,7 +169,18 @@ public class DataPacketFragment extends Fragment {
             }
         }
 
+        if (requestCode == 6) {
+            if (requestCode == Activity.RESULT_OK) {
+                String result = data.getStringExtra("result");
 
+
+            }
+        }
+    }
+
+    public void Doctorlist() {
+        Intent SendFile = new Intent(getActivity(), DoctorList.class);
+        startActivityForResult(SendFile, 6);
     }
 
     public void sendFile() {
