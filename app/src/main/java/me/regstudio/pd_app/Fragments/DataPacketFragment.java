@@ -49,6 +49,18 @@ public class DataPacketFragment extends Fragment {
         heartRate = (Button) view.findViewById(R.id.HeartB);
         writeMessage = (Button) view.findViewById(R.id.WriteMessageB);
 
+//        if (MainActivity.DoctorSelectedID != null) {
+//
+//        } else {
+//            sendFile.setEnabled(false);
+//            recVid.setEnabled(false);
+//            sendData.setEnabled(false);
+//            selectDoc.setEnabled(true);
+//            heartRate.setEnabled(false);
+//            writeMessage.setEnabled(false);
+//        }
+
+
 
         sendFile.setOnClickListener(new View.OnClickListener(){
             @Override
