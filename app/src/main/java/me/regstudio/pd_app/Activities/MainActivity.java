@@ -142,7 +142,6 @@ public class MainActivity extends AppCompatActivity {
                                 //add logout code here
 
 
-
                                 break;
                         }
 
