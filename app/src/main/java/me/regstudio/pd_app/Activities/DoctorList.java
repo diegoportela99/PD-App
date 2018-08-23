@@ -33,4 +33,9 @@ public class DoctorList extends AppCompatActivity {
     private void AddButtons() {
 
     }
+
+    private void setDoc(String x) {
+        MainActivity.DoctorSelectedID = x;
+    }
+
 }
