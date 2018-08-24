@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import me.regstudio.pd_app.Activities.DoctorList;
 import me.regstudio.pd_app.Activities.HeartRate;
 import me.regstudio.pd_app.Activities.MainActivity;
 import me.regstudio.pd_app.Activities.RecordVideo;
@@ -47,6 +48,18 @@ public class DataPacketFragment extends Fragment {
         selectDoc = (Button) view.findViewById(R.id.SelectB);
         heartRate = (Button) view.findViewById(R.id.HeartB);
         writeMessage = (Button) view.findViewById(R.id.WriteMessageB);
+
+//        if (MainActivity.DoctorSelectedID != null) {
+//
+//        } else {
+//            sendFile.setEnabled(false);
+//            recVid.setEnabled(false);
+//            sendData.setEnabled(false);
+//            selectDoc.setEnabled(true);
+//            heartRate.setEnabled(false);
+//            writeMessage.setEnabled(false);
+//        }
+
 
 
         sendFile.setOnClickListener(new View.OnClickListener(){
@@ -152,6 +165,12 @@ public class DataPacketFragment extends Fragment {
 
 
             }
+
+            if (resultCode == Activity.RESULT_CANCELED) {
+                String result=data.getStringExtra("result");
+
+                Doctorlist();
+            }
         }
 
         if (requestCode == 5) {
@@ -162,7 +181,18 @@ public class DataPacketFragment extends Fragment {
             }
         }
 
+        if (requestCode == 6) {
+            if (requestCode == Activity.RESULT_OK) {
+                String result = data.getStringExtra("result");
 
+
+            }
+        }
+    }
+
+    public void Doctorlist() {
+        Intent SendFile = new Intent(getActivity(), DoctorList.class);
+        startActivityForResult(SendFile, 6);
     }
 
     public void sendFile() {
