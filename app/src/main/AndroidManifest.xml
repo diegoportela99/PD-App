@@ -22,6 +22,8 @@
         <activity android:name=".Activities.HeartRate"></activity>
         <activity android:name=".Activities.WriteMessage"></activity>
         <activity android:name=".Activities.SelectDoctor"></activity>
+        <activity android:name=".Activities.DoctorList"></activity>
+
     </application>
 
 </manifest>
