@@ -9,28 +9,16 @@
     <!-- TODO: Update blank fragment layout -->
 
     <Button
-        android:id="@+id/save_button"
+        android:id="@+id/edit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="48dp"
-        android:text="@string/save_info_button"
+        android:text="@string/edit_info_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LinearLayout_condition" />
-
-    <Button
-        android:id="@+id/cancel_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/cancel_info_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/save_button" />
 
     <LinearLayout
         android:id="@+id/LinearLayout_condition"
@@ -162,19 +150,19 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout_lastname">
 
         <TextView
-            android:id="@+id/gender_text"
+            android:id="@+id/sex_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/patient_gender" />
+            android:text="@string/patient_sex" />
 
         <EditText
-            android:id="@+id/edit_gender"
+            android:id="@+id/edit_sex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="@string/hint_gender"
+            android:hint="@string/hint_sex"
             android:inputType="textPersonName" />
 
     </LinearLayout>

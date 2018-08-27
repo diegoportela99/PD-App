@@ -22,7 +22,7 @@
     <!-- FOR PATIENT INFORMATION FRAGMENT -->
     <string name="patient_first_name">First Name</string>
     <string name="patient_last_name">Last Name</string>
-    <string name="patient_gender">Gender</string>
+    <string name="patient_sex">Sex</string>
     <string name="patient_age">Age</string>
     <string name="patient_height">Height</string>
     <string name="patient_weight">Weight</string>
@@ -30,12 +30,11 @@
 
     <string name="hint_first_name">Enter your first name</string>
     <string name="hint_last_name">Enter your last name</string>
-    <string name="hint_gender">Enter your gender</string>
+    <string name="hint_sex">Enter your sex</string>
     <string name="hint_age">Enter your age</string>
     <string name="hint_height">Enter your height (cm)</string>
     <string name="hint_weight">Enter your weight (kg)</string>
     <string name="hint_condition">Enter details about your medical condition</string>
 
-    <string name="save_info_button">Save changes</string>
-    <string name="cancel_info_button">Cancel</string>
+    <string name="edit_info_button">Edit</string>
 </resources>
