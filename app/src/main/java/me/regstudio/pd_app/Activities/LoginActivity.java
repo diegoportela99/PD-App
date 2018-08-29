@@ -2,13 +2,15 @@ package me.regstudio.pd_app.Activities;
 
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -44,12 +46,16 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.passwordET)
     EditText passwordEditText;
 
+    @BindView(R.id.register)
+    Button register;
     /**
      * It is helpful to create a tag for every activity/fragment. It will be easier to understand
      * log messages by having different tags on different places.
      */
     private static String TAG = "LoginActivity";
+
     private FirebaseAuth mAuth;
+    private FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         // You need this line on your activity so Butter Knife knows what Activity-View we are referencing
         ButterKnife.bind(this);
-
+        mAuth = FirebaseAuth.getInstance();
         // A reference to the toolbar, that way we can modify it as we please
         Toolbar toolbar = findViewById(R.id.login_toolbar);
         setSupportActionBar(toolbar);
@@ -91,5 +97,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+    @OnClick(R.id.register)
+    public void registerUser() {
+        Intent intent1= new Intent(this, RegisterUser.class);
+        startActivity(intent1);
+
+    }
 }
 
