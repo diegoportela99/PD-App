@@ -36,15 +36,13 @@ public class LoginActivity extends AppCompatActivity {
      * Use the @BindView annotation so Butter Knife can search for that view, and cast it for you
      * (in this case it will get casted to Edit Text)
      */
-    @BindView(R.id.usernameET)
-    EditText usernameEditText;
+
 
     /**
      * If you want to know more about Butter Knife, please, see the link I left at the build.gradle
      * file.
      */
-    @BindView(R.id.passwordET)
-    EditText passwordEditText;
+
 
     @BindView(R.id.register)
     Button register;
@@ -53,6 +51,10 @@ public class LoginActivity extends AppCompatActivity {
      * log messages by having different tags on different places.
      */
     private static String TAG = "LoginActivity";
+    @BindView(R.id.login_email)
+    EditText loginEmail;
+    @BindView(R.id.login_password)
+    EditText loginPassword;
 
     private FirebaseAuth mAuth;
     private FirebaseUser user;
@@ -65,8 +67,8 @@ public class LoginActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         mAuth = FirebaseAuth.getInstance();
         // A reference to the toolbar, that way we can modify it as we please
-        Toolbar toolbar = findViewById(R.id.login_toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = findViewById(R.id.login_toolbar);
+        //setSupportActionBar(toolbar);
 
         // Please try to use more String resources (values -> strings.xml) vs hardcoded Strings.
         setTitle(R.string.login_activity_title);
@@ -80,8 +82,8 @@ public class LoginActivity extends AppCompatActivity {
      */
     @OnClick(R.id.login_btn)
     public void LogIn() {
-        String username = usernameEditText.getText().toString();
-        String password = passwordEditText.getText().toString();
+        String username = loginEmail.getText().toString();
+        String password = loginPassword.getText().toString();
 
         // TODO: For now, the login button will simply print on the console the username/password and let you in
         // TODO: It is up to you guys to implement a proper login system
@@ -99,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.register)
     public void registerUser() {
-        Intent intent1= new Intent(this, RegisterUser.class);
+        Intent intent1 = new Intent(this, RegisterUser.class);
         startActivity(intent1);
 
     }
