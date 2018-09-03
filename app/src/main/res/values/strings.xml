@@ -18,4 +18,10 @@
 
     <string name="drawer_open">Drawer Open</string>
     <string name="drawer_close">Drawer Close</string>
+
+    <!-- Strings for the WriteMessage activity -->
+    <string name="activity_label">Write a message</string>
+    <string name="add_message">Add message</string>
+    <string name="edit_message_hint">Tap to edit</string>
+    <string name="char_count_text">Character count: </string>
 </resources>
