@@ -1,10 +1,12 @@
 package me.regstudio.pd_app.Activities;
 
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,6 +17,7 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.regstudio.pd_app.Exceptions.InvalidMessageException;
 import me.regstudio.pd_app.R;
 /**
  * Created by diego on 8/3/2018.
@@ -54,7 +57,11 @@ public class WriteMessage extends AppCompatActivity {
         messageEditText.addTextChangedListener(messageTextWatcher);
     }
 
-    private void writeMessageToPacket(String message) {
+    private void writeMessageToPacket(String message) throws InvalidMessageException {
+        // Throw InvalidMessageException if message is empty.
+        if (message.equals("")) {
+            throw new InvalidMessageException("Invalid message: Cannot add an empty message.", 1);
+        }
         // TODO: Actual writing to data packet occurs here.
     }
 
@@ -74,14 +81,16 @@ public class WriteMessage extends AppCompatActivity {
 
             Toast.makeText(getApplicationContext(), "Successfully added message!", Toast.LENGTH_SHORT).show();
 
-        } catch (Exception e) {
-            // Replace above exception with a specific one after implementation of message write.
+        } catch (InvalidMessageException e) {
 
             /* TODO: Implement error handling specific to data write implementation.
-            *  Try-Catch block may not be required depending on the method of data writing and data packet chosen.
+            *  InvalidMessageException can be written to be flexible with errors involving writing the message to the data packet.
             */
-
-            Toast.makeText(getApplicationContext(), "Failed to add message.", Toast.LENGTH_LONG).show();
+            if (e.getCode() == e.EMPTY_MESSAGE) {
+                Toast.makeText(getApplicationContext(), "Failed to add message: can't add an empty message.", Toast.LENGTH_LONG).show();
+            } else if (e.getCode() == e.GENERAL_FAILURE) {
+                Toast.makeText(getApplicationContext(), "Failed to add message.", Toast.LENGTH_LONG).show();
+            }
         }
 
     }
