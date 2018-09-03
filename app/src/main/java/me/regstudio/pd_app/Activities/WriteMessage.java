@@ -3,10 +3,14 @@ package me.regstudio.pd_app.Activities;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,12 +25,33 @@ public class WriteMessage extends AppCompatActivity {
     @BindView(R.id.message_edit_text) EditText messageEditText;
     @BindView(R.id.char_count_text) TextView charCountText;
 
+    private final TextWatcher messageTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            // Get the number of characters in the message EditText.
+            int length = s.length();
+            // Set the char count TextView to "Length: x character(s).
+            String displayText = String.format(Locale.ENGLISH, "Length: %d %s", s.length(), length == 1 ? "character" : "characters");
+            charCountText.setText(displayText);
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+        }
+    };
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.write_message);
         // Setup ButterKnife
         ButterKnife.bind(this);
+        // Setup char count watcher.
+        messageEditText.addTextChangedListener(messageTextWatcher);
     }
 
     private void writeMessageToPacket(String message) {

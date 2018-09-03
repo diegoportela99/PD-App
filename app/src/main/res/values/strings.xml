@@ -23,5 +23,5 @@
     <string name="activity_label">Write a message</string>
     <string name="add_message">Add message</string>
     <string name="edit_message_hint">Tap to edit</string>
-    <string name="char_count_text">Character count: </string>
+    <string name="char_count_text">Length: 0 characters</string>
 </resources>
