@@ -5,8 +5,11 @@ import android.util.Log;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
@@ -16,6 +19,8 @@ import java.util.zip.ZipOutputStream;
  */
 
 //class used for storing information used by app and database
+    //rather than creating a zip file, just create a normal file and an aditional text file that will be used to see the date
+
 public class DataStore {
 
     //constructor
@@ -29,8 +34,61 @@ public class DataStore {
     public void addText() {}
     public void addHeartRate() {}
     public void addFile() {}
-    public void addVideo() {}
     public void addPersonalInfo() {}
+    
+
+    //Used to copy files and move them to somewhere else.
+    public static void copyFileOrDirectory(String srcDir, String dstDir) {
+
+        try {
+            File src = new File(srcDir);
+            File dst = new File(dstDir, src.getName());
+
+            if (src.isDirectory()) {
+
+                String files[] = src.list();
+                int filesLength = files.length;
+                for (int i = 0; i < filesLength; i++) {
+                    String src1 = (new File(src, files[i]).getPath());
+                    String dst1 = dst.getPath();
+                    copyFileOrDirectory(src1, dst1);
+
+                }
+            } else {
+                copyFile(src, dst);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void copyFile(File sourceFile, File destFile) throws IOException {
+        if (!destFile.getParentFile().exists())
+            destFile.getParentFile().mkdirs();
+
+        if (!destFile.exists()) {
+            destFile.createNewFile();
+        }
+
+        FileChannel source = null;
+        FileChannel destination = null;
+
+        try {
+            source = new FileInputStream(sourceFile).getChannel();
+            destination = new FileOutputStream(destFile).getChannel();
+            destination.transferFrom(source, 0, source.size());
+        } finally {
+            if (source != null) {
+                source.close();
+            }
+            if (destination != null) {
+                destination.close();
+            }
+        }
+    }
+
+
+    //CODE BELOW MAY NOT BE USED
 
     private byte BUFFER = 127; // EDIT THIS -------------------------
 
