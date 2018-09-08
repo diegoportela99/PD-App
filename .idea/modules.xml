@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\diego\Desktop\Software Dev\project1B\1B-App.iml" filepath="C:\Users\diego\Desktop\Software Dev\project1B\1B-App.iml" />
-      <module fileurl="file://C:\Users\diego\Desktop\Software Dev\1B-App\App.iml" filepath="C:\Users\diego\Desktop\Software Dev\1B-App\App.iml" />
-      <module fileurl="file://C:\Users\diego\Desktop\Software Dev\git-App2\App1B.iml" filepath="C:\Users\diego\Desktop\Software Dev\git-App2\App1B.iml" />
-      <module fileurl="file://C:\Users\diego\Desktop\Software Dev\App\AppProject.iml" filepath="C:\Users\diego\Desktop\Software Dev\App\AppProject.iml" />
-      <module fileurl="file://C:\Users\diego\Desktop\Software Dev\App\PD-App.iml" filepath="C:\Users\diego\Desktop\Software Dev\App\PD-App.iml" />
-      <module fileurl="file://C:\Users\diego\Desktop\Software Dev\1B-App\Project2.iml" filepath="C:\Users\diego\Desktop\Software Dev\1B-App\Project2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1B_APP.iml" filepath="$PROJECT_DIR$/1B_APP.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\diego\Desktop\Software Dev\App\app\app.iml" filepath="C:\Users\diego\Desktop\Software Dev\App\app\app.iml" />
-      <module fileurl="file://C:\Users\diego\Desktop\Software Dev\AppProject\git-App2.iml" filepath="C:\Users\diego\Desktop\Software Dev\AppProject\git-App2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/project1B.iml" filepath="$PROJECT_DIR$/project1B.iml" />
     </modules>
   </component>
 </project>

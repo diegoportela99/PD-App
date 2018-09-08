@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -17,8 +18,7 @@ import me.regstudio.pd_app.R;
  */
 
 public class DoctorList extends AppCompatActivity {
-    private LinearLayout linearLayout;
-    private ScrollView scrollView;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
