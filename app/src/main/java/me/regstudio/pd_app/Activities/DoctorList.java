@@ -17,8 +17,6 @@ import me.regstudio.pd_app.R;
  */
 
 public class DoctorList extends AppCompatActivity {
-    private LinearLayout linearLayout;
-    private ScrollView scrollView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,14 +24,16 @@ public class DoctorList extends AppCompatActivity {
         setContentView(R.layout.doctor_list);
         setTitle("Doctor List");
 
+        
+    }
+
+    //Adds an item to the list
+    private void AddDoctor() {
 
     }
 
 
-    private void AddButtons() {
-
-    }
-
+    //method called after a doctor is selected
     private void setDoc(String x) {
         MainActivity.DoctorSelectedID = x;
     }
