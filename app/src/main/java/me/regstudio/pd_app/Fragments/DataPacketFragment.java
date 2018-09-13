@@ -66,7 +66,7 @@ public class DataPacketFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 // click handling code
-                Toast.makeText(getActivity(), "Pleaae select your preference.",
+                Toast.makeText(getActivity(), "Please select your preference.",
                         Toast.LENGTH_LONG).show();
 
                 sendFile();

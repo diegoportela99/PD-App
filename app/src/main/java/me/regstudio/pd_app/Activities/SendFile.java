@@ -7,10 +7,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ipaulpro.afilechooser.utils.FileUtils;
@@ -26,18 +29,39 @@ public class SendFile extends AppCompatActivity{
 
     private static final int REQUEST_CODE = 6384; // onActivityResult request
     // code
-    Button storageBtn, cloudBtn;
+    Button storageBtn, uploadBtn;
+    TextView fileNameTv;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_send_file);
         storageBtn = (Button) findViewById(R.id.storageBtn);
-        cloudBtn = (Button) findViewById(R.id.cloudBtn);
+        fileNameTv = (TextView) findViewById(R.id.fileNameTv);
+        uploadBtn = (Button) findViewById(R.id.uploadBtn);
+        uploadBtn.setEnabled(false);
         storageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showChooser();
+            }
+        });
+        fileNameTv.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                String textViewFileName = fileNameTv.getText().toString().trim();
+                uploadBtn.setEnabled(!textViewFileName.isEmpty());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
 //        setContentView(storageBtn);
@@ -71,6 +95,7 @@ public class SendFile extends AppCompatActivity{
                             final String path = FileUtils.getPath(this, uri);
                             Toast.makeText(SendFile.this,
                                     "File Selected: " + path, Toast.LENGTH_LONG).show();
+                            fileNameTv.setText("Selected file: " + path);
                         } catch (Exception e) {
                             Log.e("FileSelectorTestActivity", "File select error", e);
                         }
