@@ -35,6 +35,11 @@ public class DataStore {
     public void addHeartRate() {}
     public void addFile() {}
     public void addPersonalInfo() {}
+
+    public void CreatePacket() {
+
+    }
+
     
 
     //Used to copy files and move them to somewhere else.
