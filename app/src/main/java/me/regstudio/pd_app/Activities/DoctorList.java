@@ -23,6 +23,7 @@ import me.regstudio.pd_app.R;
 
 public class DoctorList extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+public class DoctorList extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,10 +47,17 @@ public class DoctorList extends AppCompatActivity implements AdapterView.OnItemS
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+        
+    }
+
+    //Adds an item to the list
+    private void AddDoctor() {
+
 
     }
 
 
+    //method called after a doctor is selected
     private void setDoc(String x) {
         MainActivity.DoctorSelectedID = x;
     }

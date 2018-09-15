@@ -17,4 +17,6 @@ public class admin extends AppCompatActivity {
         setContentView(R.layout.admin_page);
 
     }
+
+
 }
