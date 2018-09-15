@@ -23,8 +23,6 @@ import me.regstudio.pd_app.R;
 
 public class DoctorList extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-public class DoctorList extends AppCompatActivity {
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
