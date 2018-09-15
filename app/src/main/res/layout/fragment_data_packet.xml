@@ -4,67 +4,9 @@
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="yourteamnumber.seshealthpatient.Fragments.DataPacketFragment">
+    tools:context="7.seshealthpatient.Fragments.DataPacketFragment">
 
     <!-- TODO: Update blank fragment layout -->
-
-    <Button
-        android:id="@+id/HeartB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="73dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="123dp"
-        android:text="Heart Rate"
-        app:layout_constraintEnd_toStartOf="@+id/WriteMessageB"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <Button
-        android:id="@+id/WriteMessageB"
-        android:layout_width="138dp"
-        android:layout_height="48dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginStart="73dp"
-        android:layout_marginTop="123dp"
-        android:text="Write Message"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/HeartB"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <Button
-        android:id="@+id/SendFileB"
-        android:layout_width="94dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="61dp"
-        android:text="send file "
-        app:layout_constraintEnd_toStartOf="@+id/RecB"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HeartB" />
-
-    <Button
-        android:id="@+id/RecB"
-        android:layout_width="120dp"
-        android:layout_height="85dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginStart="94dp"
-        android:layout_marginTop="35dp"
-        android:text="record video / picture"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/SendFileB"
-        app:layout_constraintTop_toBottomOf="@+id/WriteMessageB" />
-
-    <Button
-        android:id="@+id/SendDataB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="53dp"
-        android:text="Send"
-        app:layout_constraintHorizontal_bias="0.793"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RecB" />
 
     <TextView
         android:id="@+id/textView4"
@@ -77,15 +19,82 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
+        android:id="@+id/RecB"
+        android:layout_width="66dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="48dp"
+        android:text="record video / picture"
+        app:layout_constraintStart_toEndOf="@+id/SendFileB"
+        app:layout_constraintTop_toBottomOf="@+id/WriteMessageB" />
+
+    <ImageButton
+        android:id="@+id/HeartB"
+        android:layout_width="66dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="123dp"
+        android:background="@android:color/background_light"
+        android:scaleType="fitXY"
+        android:src="@drawable/heart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <ImageButton
+        android:id="@+id/WriteMessageB"
+        android:layout_width="66dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="123dp"
+        android:background="@android:color/background_light"
+        android:scaleType="fitXY"
+        android:src="@drawable/write"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/HeartB"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <ImageButton
+        android:id="@+id/SendFileB"
+        android:layout_width="66dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="51dp"
+        android:background="@android:color/background_light"
+        android:scaleType="fitXY"
+        android:src="@drawable/file"
+        app:layout_constraintEnd_toStartOf="@+id/RecB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HeartB" />
+
+    <ImageButton
         android:id="@+id/SelectB"
-        android:layout_width="132dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="71dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
-        android:text="Select Doctor"
-        app:layout_constraintEnd_toStartOf="@+id/SendDataB"
+        android:layout_width="69dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="57dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="61dp"
+        android:background="@android:color/background_light"
+        android:scaleType="fitXY"
+        android:src="@drawable/person"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SendFileB" />
+
+    <ImageButton
+        android:id="@+id/SendInfoB"
+        android:layout_width="61dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="57dp"
+        android:layout_marginStart="103dp"
+        android:layout_marginTop="64dp"
+        android:background="@android:color/background_light"
+        android:scaleType="fitXY"
+        android:src="@drawable/send"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/SelectB"
+        app:layout_constraintTop_toBottomOf="@+id/RecB" />
+
 </android.support.constraint.ConstraintLayout>
