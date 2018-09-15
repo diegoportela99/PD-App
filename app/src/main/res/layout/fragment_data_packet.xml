@@ -37,7 +37,7 @@
         android:layout_marginTop="123dp"
         android:background="@android:color/background_light"
         android:scaleType="fitXY"
-        android:src="@drawable/heart"
+        android:src="@drawable/heartpic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -50,7 +50,7 @@
         android:layout_marginTop="123dp"
         android:background="@android:color/background_light"
         android:scaleType="fitXY"
-        android:src="@drawable/write"
+        android:src="@drawable/writepic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/HeartB"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -64,7 +64,7 @@
         android:layout_marginTop="51dp"
         android:background="@android:color/background_light"
         android:scaleType="fitXY"
-        android:src="@drawable/file"
+        android:src="@drawable/filepic"
         app:layout_constraintEnd_toStartOf="@+id/RecB"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/HeartB" />
@@ -78,7 +78,7 @@
         android:layout_marginTop="61dp"
         android:background="@android:color/background_light"
         android:scaleType="fitXY"
-        android:src="@drawable/person"
+        android:src="@drawable/personpic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SendFileB" />
@@ -92,7 +92,7 @@
         android:layout_marginTop="64dp"
         android:background="@android:color/background_light"
         android:scaleType="fitXY"
-        android:src="@drawable/send"
+        android:src="@drawable/sendpic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/SelectB"
         app:layout_constraintTop_toBottomOf="@+id/RecB" />
