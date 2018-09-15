@@ -1,0 +1,5 @@
+<root>
+    <item name='android.widget.Spinner void setAdapter(android.widget.SpinnerAdapter)'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+</root>
