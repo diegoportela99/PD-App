@@ -3,12 +3,18 @@ package me.regstudio.pd_app.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -66,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
         // You need this line on your activity so Butter Knife knows what Activity-View we are referencing
         ButterKnife.bind(this);
         mAuth = FirebaseAuth.getInstance();
-        // A reference to the toolbar, that way we can modify it as we please
+        // A reference to the toolbar, th  at way we can modify it as we please
         //Toolbar toolbar = findViewById(R.id.login_toolbar);
         //setSupportActionBar(toolbar);
 
@@ -80,22 +86,78 @@ public class LoginActivity extends AppCompatActivity {
      * See how Butter Knife also lets us add an on click event by adding this annotation before the
      * declaration of the function, making our life way easier.
      */
-    @OnClick(R.id.login_btn)
-    public void LogIn() {
+
+    private boolean userLogin()
+    {
         String username = loginEmail.getText().toString();
         String password = loginPassword.getText().toString();
 
-        // TODO: For now, the login button will simply print on the console the username/password and let you in
-        // TODO: It is up to you guys to implement a proper login system
+        if(username == null && password==null)
+        {
+            Toast.makeText(this, "Fields are empty. Login Unsuccessful", Toast.LENGTH_SHORT).show();
+            return false;
+        }
 
-        // Having a tag, and the name of the function on the console message helps allot in
-        // knowing where the message should appear.
-        Log.d(TAG, "LogIn: username: " + username + " password: " + password);
+
+        if (username == null) {
+            Toast.makeText(this, "Please enter the email", Toast.LENGTH_SHORT).show();
+            // registerEmail.setError("Email is required");
+            //registerEmail.requestFocus();
+            return false;
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(username).matches()) {
+
+            Toast.makeText(this, "Please enter a valid email address", Toast.LENGTH_SHORT).show();
+            //registerEmail.setError("Please enter a valid email");
+            //registerRePassword.requestFocus();
+            return false;
+        }
+
+        if (password == null) {
+
+            Toast.makeText(this, "Please enter a password", Toast.LENGTH_SHORT).show();
+            //registerPassword.setError("Password is required");
+            //registerPassword.requestFocus();
+            return false;
+        }
 
 
-        // Start a new activity
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        if (password.length() < 6) {
+            Toast.makeText(this, "Please enter a password more than 6 words", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        mAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                if (task.isSuccessful())
+                {
+                    Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
+
+                }else
+                {
+                    Toast.makeText(getApplicationContext(), task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    return true;
+    }
+
+
+
+    @OnClick(R.id.login_btn)
+    public void LogIn() {
+
+        if(userLogin() == true) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
+        }else
+        {
+            Toast.makeText(this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
