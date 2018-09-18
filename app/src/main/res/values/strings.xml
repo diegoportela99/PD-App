@@ -17,6 +17,13 @@
     <string name="send_local_file">Send Local File</string>
     <string name="facilities_map">Facilities Map</string>
 
+    <string-array name="doctors">
+        <item>Doctor 1</item>
+        <item>Doctor 2</item>
+        <item>Doctor 3</item>
+        <item>Doctor 4</item>
+    </string-array>
+
     <string name="drawer_open">Drawer Open</string>
     <string name="drawer_close">Drawer Close</string>
 </resources>
