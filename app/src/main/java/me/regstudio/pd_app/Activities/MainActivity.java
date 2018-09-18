@@ -1,9 +1,11 @@
 package me.regstudio.pd_app.Activities;
 
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -17,6 +19,7 @@ import android.support.v7.widget.Toolbar;
 
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 
 import me.regstudio.pd_app.Fragments.DataPacketFragment;
@@ -77,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
      * The current fragment being displayed.
      */
     private MenuStates currentState;
+
+    private Button admin;
+    public static String DoctorSelectedID;
 
 
     @Override
@@ -139,7 +145,6 @@ public class MainActivity extends AppCompatActivity {
                                 //add logout code here
 
 
-
                                 break;
                         }
 
@@ -172,6 +177,22 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
+        admin = (Button) findViewById(R.id.adminB);
+
+        //set true if any of the doctors have logged in.
+        if (true) {
+            admin.setVisibility(View.VISIBLE);
+        }else {
+            admin.setVisibility(View.GONE);
+        }
+
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                admin_page();
+            }
+        });
+
 
         // More on this code, check the tutorial at http://www.vogella.com/tutorials/AndroidFragments/article.html
         fragmentManager = getFragmentManager();
@@ -181,6 +202,22 @@ public class MainActivity extends AppCompatActivity {
         ft.add(R.id.fragment_container, new PatientInformationFragment());
         ft.commit();
     }
+
+    public void admin_page() {
+        Intent i = new Intent(this, admin.class);
+        startActivityForResult(i, 1);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result=data.getStringExtra("result");
+
+            }
+        }
+    }
+
 
     /**
      * Called when one of the items in the toolbar was clicked, in this case, the menu button.
@@ -210,9 +247,15 @@ public class MainActivity extends AppCompatActivity {
      * @param fragment The fragment to be displayed
      */
     private void ChangeFragment(Fragment fragment) {
+        admin.setVisibility(View.GONE);
+
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.fragment_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    public void selectDoctor(String doc) {
+        this.DoctorSelectedID = doc;
     }
 }

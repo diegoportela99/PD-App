@@ -9,8 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
+import android.view.View.OnClickListener;
 
+import me.regstudio.pd_app.Activities.DoctorList;
 import me.regstudio.pd_app.Activities.HeartRate;
 import me.regstudio.pd_app.Activities.MainActivity;
 import me.regstudio.pd_app.Activities.RecordVideo;
@@ -24,14 +27,13 @@ import me.regstudio.pd_app.R;
  */
 public class DataPacketFragment extends Fragment {
 
-
     private MainActivity obj;
 
     public DataPacketFragment() {
         // Required empty public constructor
     }
 
-    Button sendFile, writeMessage, sendData, heartRate, selectDoc, recVid;
+    ImageButton sendFile, writeMessage, sendInfo, heartRate, selectDoc, recVid;
 
 
     @Override
@@ -41,26 +43,38 @@ public class DataPacketFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_data_packet, container, false);
 
 
-        sendFile = (Button) view.findViewById(R.id.SendFileB);
-        recVid = (Button) view.findViewById(R.id.RecB);
-        sendData = (Button) view.findViewById(R.id.SendDataB);
-        selectDoc = (Button) view.findViewById(R.id.SelectB);
-        heartRate = (Button) view.findViewById(R.id.HeartB);
-        writeMessage = (Button) view.findViewById(R.id.WriteMessageB);
+        sendFile = (ImageButton) view.findViewById(R.id.SendFileB);
+        recVid = (ImageButton) view.findViewById(R.id.RecB);
+        selectDoc = (ImageButton) view.findViewById(R.id.SelectB);
+        heartRate = (ImageButton) view.findViewById(R.id.HeartB);
+        writeMessage = (ImageButton) view.findViewById(R.id.WriteMessageB);
+        sendInfo = (ImageButton) view.findViewById(R.id.SendInfoB);
+
+//        if (MainActivity.DoctorSelectedID != null) {
+//
+//        } else {
+//            sendFile.setEnabled(false);
+//            recVid.setEnabled(false);
+//            sendData.setEnabled(false);
+//            selectDoc.setEnabled(true);
+//            heartRate.setEnabled(false);
+//            writeMessage.setEnabled(false);
+//        }
 
 
-        sendFile.setOnClickListener(new View.OnClickListener(){
+
+        sendFile.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 // click handling code
-                Toast.makeText(getActivity(), "test button",
+                Toast.makeText(getActivity(), "Please select your preference.",
                         Toast.LENGTH_LONG).show();
 
                 sendFile();
             }
         });
 
-        recVid.setOnClickListener(new View.OnClickListener(){
+        recVid.setOnClickListener(new OnClickListener(){
             @Override
             public void onClick(View view) {
                 // click handling code
@@ -71,18 +85,7 @@ public class DataPacketFragment extends Fragment {
             }
         });
 
-        sendData.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                // click handling code
-                Toast.makeText(getActivity(), "test button",
-                        Toast.LENGTH_LONG).show();
-
-
-            }
-        });
-
-        selectDoc.setOnClickListener(new View.OnClickListener(){
+        selectDoc.setOnClickListener(new OnClickListener(){
             @Override
             public void onClick(View view) {
                 // click handling code
@@ -93,7 +96,7 @@ public class DataPacketFragment extends Fragment {
             }
         });
 
-        heartRate.setOnClickListener(new View.OnClickListener(){
+        heartRate.setOnClickListener(new OnClickListener(){
             @Override
             public void onClick(View view) {
                 // click handling code
@@ -104,7 +107,7 @@ public class DataPacketFragment extends Fragment {
             }
         });
 
-        writeMessage.setOnClickListener(new View.OnClickListener(){
+        writeMessage.setOnClickListener(new OnClickListener(){
             @Override
             public void onClick(View view) {
                 // click handling code
@@ -112,6 +115,17 @@ public class DataPacketFragment extends Fragment {
                         Toast.LENGTH_LONG).show();
 
                 writeMessage();
+            }
+        });
+
+        sendInfo.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // click handling code
+                Toast.makeText(getActivity(), "test button",
+                        Toast.LENGTH_LONG).show();
+
+
             }
         });
 
@@ -152,6 +166,12 @@ public class DataPacketFragment extends Fragment {
 
 
             }
+
+            if (resultCode == Activity.RESULT_CANCELED) {
+                String result=data.getStringExtra("result");
+
+                Doctorlist();
+            }
         }
 
         if (requestCode == 5) {
@@ -162,7 +182,18 @@ public class DataPacketFragment extends Fragment {
             }
         }
 
+        if (requestCode == 6) {
+            if (requestCode == Activity.RESULT_OK) {
+                String result = data.getStringExtra("result");
 
+
+            }
+        }
+    }
+
+    public void Doctorlist() {
+        Intent SendFile = new Intent(getActivity(), DoctorList.class);
+        startActivityForResult(SendFile, 6);
     }
 
     public void sendFile() {
