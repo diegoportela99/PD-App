@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +22,7 @@ import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.regstudio.pd_app.DataStructures.PatientFile;
 import me.regstudio.pd_app.R;
 
 /**
@@ -113,6 +116,14 @@ public class PatientInformationFragment extends Fragment {
         ButterKnife.apply(editTexts, DISABLE_EDIT);
     }
 
+    private void savePatientInfo() {
+        /* Used to save information to the Firebase database. */
+        // Create new patientFile object and populate it.
+        PatientFile patientFile = new PatientFile();
+        for (EditText editText : editTexts) {
+        }
+    }
+
     @OnClick(R.id.edit_button)
     public void editInfo(View view) {
         /* Used to edit and save patient information */
@@ -126,6 +137,8 @@ public class PatientInformationFragment extends Fragment {
             // Disable all EditTexts and change the button name
             ButterKnife.apply(editTexts, DISABLE_EDIT);
             editButton.setText("Edit");
+            // Save information to Firebase
+            savePatientInfo();
         }
     }
 
