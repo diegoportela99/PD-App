@@ -45,6 +45,7 @@
     <string name="hint_condition">Enter details about your medical condition</string>
 
     <string name="edit_info_button">Edit</string>
+    <color name='white'></color>
 
     <!-- Strings for the WriteMessage activity -->
     <string name="activity_label">Write a message</string>
