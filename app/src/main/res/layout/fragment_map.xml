@@ -11,5 +11,17 @@
         android:name='com.google.android.gms.maps.SupportMapFragment'
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="yourteamnumber.seshealthpatient.Fragments.MapFragment"/>
+        tools:context="yourteamnumber.seshealthpatient.Fragments.MapFragment">
+
+        <Button
+            android:id="@+id/hospitals"
+            android:layout_width="161dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:paddingLeft="10dp"
+            android:text="Nearby Hospitals" />
+    </FrameLayout>
 </FrameLayout>
+

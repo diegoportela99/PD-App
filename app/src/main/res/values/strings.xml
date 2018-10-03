@@ -6,6 +6,7 @@
     <string name="log_in_txt">Log In</string>
     <string name="login_activity_title">Log In</string>
     <string name="chooser_title">Lorem ipsum</string>
+    <string name="google_places_key">AIzaSyDlCsaFgmjgQp4L3ih2sOhheDo8i4gfOjY</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

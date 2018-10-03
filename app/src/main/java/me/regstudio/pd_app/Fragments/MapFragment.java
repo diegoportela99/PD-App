@@ -14,6 +14,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -34,16 +35,20 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import me.regstudio.pd_app.Activities.GetNearbyPlaces;
 import me.regstudio.pd_app.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MapFragment extends Fragment implements OnMapReadyCallback, LocationListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+public class MapFragment extends Fragment implements OnMapReadyCallback, LocationListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
     GoogleMap mGoogleMap;
     View mView;
     GoogleApiClient client;
-
+    LatLng latLngCurrent;
+    Button hospitals;
+    String url;
+    boolean isFirstTime = true;
 
     public MapFragment() {
         // Required empty public constructor
@@ -63,8 +68,27 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
             ft.replace(R.id.map, mapFragment).commit();
         }
         mapFragment.getMapAsync(this);
+        hospitals = mView.findViewById(R.id.hospitals);
+        hospitals.setOnClickListener(this);
         return mView;
 
+    }
+
+    public void findHospitals(View v){
+        StringBuilder stringBuilder = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+        stringBuilder.append("location=" + latLngCurrent.latitude + "," + latLngCurrent.longitude);
+        stringBuilder.append("&radius="+10000);
+        stringBuilder.append("&keyword="+"hospital");
+        stringBuilder.append("&key="+getResources().getString(R.string.google_places_key));
+
+        url = stringBuilder.toString();
+
+        Object dataTransfer[] = new Object[2];
+        dataTransfer[0] = mGoogleMap;
+        dataTransfer[1] = url;
+
+        GetNearbyPlaces getNearbyPlaces = new GetNearbyPlaces(this);
+        getNearbyPlaces.execute(dataTransfer);
     }
 
     @Override
@@ -125,8 +149,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
         if(location == null){
             Toast.makeText(getActivity(),"Location not found", Toast.LENGTH_SHORT).show();
         }
-        else{
-            LatLng latLngCurrent = new LatLng(location.getLatitude(), location.getLongitude());
+        else if(isFirstTime){
+            latLngCurrent = new LatLng(location.getLatitude(), location.getLongitude());
 
             CameraUpdate update = CameraUpdateFactory.newLatLngZoom(latLngCurrent, 15);
             mGoogleMap.animateCamera(update);
@@ -137,6 +161,15 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
             options.title("Current Location");
             options.snippet("My Position");
             mGoogleMap.addMarker(options);
+            isFirstTime = false;
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.hospitals:
+                findHospitals(view);
         }
     }
 }
