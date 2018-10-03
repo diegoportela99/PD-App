@@ -6,6 +6,7 @@
     <string name="log_in_txt">Log In</string>
     <string name="login_activity_title">Log In</string>
     <string name="chooser_title">Lorem ipsum</string>
+    <string name="google_places_key">AIzaSyDlCsaFgmjgQp4L3ih2sOhheDo8i4gfOjY</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -45,6 +46,7 @@
     <string name="hint_condition">Enter details about your medical condition</string>
 
     <string name="edit_info_button">Edit</string>
+    <color name='white'></color>
 
     <!-- Strings for the WriteMessage activity -->
     <string name="activity_label">Write a message</string>

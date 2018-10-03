@@ -16,10 +16,11 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 
-
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 
 
 import me.regstudio.pd_app.Fragments.DataPacketFragment;
@@ -136,7 +137,11 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             case R.id.nav_map:
                                 if (currentState != MenuStates.NAVIGATION_MAP) {
-                                    ChangeFragment(new MapFragment());
+                                    admin.setVisibility(View.GONE);
+                                    MapFragment mapFragment = new MapFragment();
+                                    android.support.v4.app.FragmentManager manager = getSupportFragmentManager();
+                                    manager.beginTransaction().replace(R.id.fragment_container, mapFragment).commit();
+                                    manager.beginTransaction().addToBackStack(null).commit();
                                     currentState = MenuStates.NAVIGATION_MAP;
                                 }
                                 break;
@@ -248,8 +253,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private void ChangeFragment(Fragment fragment) {
         admin.setVisibility(View.GONE);
-
         FragmentTransaction transaction = fragmentManager.beginTransaction();
+
         transaction.replace(R.id.fragment_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();

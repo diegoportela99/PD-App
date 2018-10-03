@@ -16,6 +16,5 @@ public class HeartRate extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_heart_rate);
 
-
     }
 }
