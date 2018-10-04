@@ -47,6 +47,14 @@ public class SendFile extends AppCompatActivity{
                 showChooser();
             }
         });
+
+        uploadBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(SendFile.this, "File Successfully Uploaded!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         fileNameTv.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -96,6 +104,7 @@ public class SendFile extends AppCompatActivity{
                             Toast.makeText(SendFile.this,
                                     "File Selected: " + path, Toast.LENGTH_LONG).show();
                             fileNameTv.setText("Selected file: " + path);
+                            Toast.makeText(this, "File Selected!", Toast.LENGTH_SHORT).show();
                         } catch (Exception e) {
                             Log.e("FileSelectorTestActivity", "File select error", e);
                         }

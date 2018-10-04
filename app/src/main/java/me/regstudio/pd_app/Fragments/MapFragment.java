@@ -89,6 +89,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
 
         GetNearbyPlaces getNearbyPlaces = new GetNearbyPlaces(this);
         getNearbyPlaces.execute(dataTransfer);
+        Toast.makeText(getActivity(), "Nearby Hospitals added on Map!", Toast.LENGTH_SHORT).show();
     }
 
     @Override
