@@ -1,25 +1,25 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml:17:2-22:12
-INJECTED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml:17:2-22:12
-INJECTED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml:17:2-22:12
+ADDED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml:17:2-20:13
+INJECTED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml:17:2-20:13
+INJECTED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml:17:2-20:13
 	package
-		ADDED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml:18:5-40
-		INJECTED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml
+		ADDED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml:18:5-40
+		INJECTED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml
+		INJECTED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml:17:12-70
+		ADDED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml:17:12-70
 uses-sdk
-ADDED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml:20:5-43
-INJECTED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml:20:5-43
-INJECTED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml:20:5-43
-INJECTED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml:20:5-43
-INJECTED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml:20:5-43
+INJECTED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml
+INJECTED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml
+INJECTED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml
+INJECTED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml
-		ADDED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml:20:5-43
-		INJECTED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml
+		INJECTED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml
+		ADDED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml
+		INJECTED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml:20:15-40
-		INJECTED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\tanma\AndroidStudioProjects\PD-App\aFileChooser\src\main\AndroidManifest.xml
+		INJECTED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml
+		ADDED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml
+		INJECTED from /Users/slesha/Desktop/Project2/aFileChooser/src/main/AndroidManifest.xml

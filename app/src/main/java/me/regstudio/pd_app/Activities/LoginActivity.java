@@ -5,11 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -61,6 +60,10 @@ public class LoginActivity extends AppCompatActivity {
     EditText loginEmail;
     @BindView(R.id.login_password)
     EditText loginPassword;
+    @BindView(R.id.imageView)
+    ImageView imageView;
+    @BindView(R.id.doctor_login)
+    Button doctorLogin;
 
     private FirebaseAuth mAuth;
     private FirebaseUser user;
@@ -87,13 +90,11 @@ public class LoginActivity extends AppCompatActivity {
      * declaration of the function, making our life way easier.
      */
 
-    private boolean userLogin()
-    {
+    private boolean userLogin() {
         String username = loginEmail.getText().toString();
         String password = loginPassword.getText().toString();
 
-        if(username == null && password==null)
-        {
+        if (username == null && password == null) {
             Toast.makeText(this, "Fields are empty. Login Unsuccessful", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -127,35 +128,31 @@ public class LoginActivity extends AppCompatActivity {
             return false;
         }
 
-        mAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(username, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
-                if (task.isSuccessful())
-                {
+                if (task.isSuccessful()) {
                     Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
 
-                }else
-                {
-                    Toast.makeText(getApplicationContext(), task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
-    return true;
+        return true;
     }
-
 
 
     @OnClick(R.id.login_btn)
     public void LogIn() {
 
-        if(userLogin() == true) {
+        if (userLogin() == true) {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
-        }else
-        {
+        } else {
             Toast.makeText(this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
         }
     }
@@ -167,5 +164,12 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent1);
 
     }
+
+    @OnClick(R.id.doctor_login)
+    public void doctorLogin() {
+        Intent intent2 = new Intent(this, DoctorLogin.class);
+        startActivity(intent2);
+    }
+
 }
 
