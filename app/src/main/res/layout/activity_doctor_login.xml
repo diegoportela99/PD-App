@@ -75,11 +75,11 @@
 
     <TextView
         android:id="@+id/doctor_register"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="352dp"
+        android:layout_height="42dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="113dp"
-        android:text="Please Contatc 1300 245 678 or email docs@pdapp.com.au to register with us as a Physician"
+        android:text="Please contact 1300 245 678 or email docs@pdapp.com.au to register with us as a Physician."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
