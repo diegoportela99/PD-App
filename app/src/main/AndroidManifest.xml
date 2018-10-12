@@ -35,12 +35,15 @@
         <activity android:name=".Activities.SelectDoctor" />
         <activity android:name=".Activities.DoctorList" />
         <activity android:name=".Activities.admin" />
-        <activity android:name=".Activities.RegisterUser"></activity>
+        <activity android:name=".Activities.RegisterUser" />
+        <activity android:name=".Activities.DoctorLogin" />
+        <activity android:name=".Activities.DoctorOptionsPage" />
+        <activity android:name=".Activities.ViewDoctors" />
+        <activity android:name=".Activities.MyDetails"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDlCsaFgmjgQp4L3ih2sOhheDo8i4gfOjY"/>
-
     </application>
 
 </manifest>
