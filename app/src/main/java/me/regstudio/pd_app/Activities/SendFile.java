@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.ipaulpro.afilechooser.utils.FileUtils;
 
 import me.regstudio.pd_app.R;
@@ -31,11 +33,13 @@ public class SendFile extends AppCompatActivity{
     // code
     Button storageBtn, uploadBtn;
     TextView fileNameTv;
-
+    private StorageReference mStorageRef;
+    private static final int GALLERY_INTENT = 2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mStorageRef = FirebaseStorage.getInstance().getReference();
         setContentView(R.layout.fragment_send_file);
         storageBtn = (Button) findViewById(R.id.storageBtn);
         fileNameTv = (TextView) findViewById(R.id.fileNameTv);
@@ -114,4 +118,6 @@ public class SendFile extends AppCompatActivity{
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
+
 }
