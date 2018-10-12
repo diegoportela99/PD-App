@@ -23,14 +23,6 @@
           }
         },
         {
-          "client_id": "1094633413698-pmgpaq0rrf3775c8inv7riud3c2en5r4.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "me.regstudio.pd_app",
-            "certificate_hash": "95c31d0b266588eec9e7e150fafba3933217ee66"
-          }
-        },
-        {
           "client_id": "1094633413698-der6j4mms00616oocc81dboqi5j5r2r0.apps.googleusercontent.com",
           "client_type": 3
         }
