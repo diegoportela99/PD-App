@@ -8,13 +8,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import android.view.View.OnClickListener;
 
 import me.regstudio.pd_app.Activities.DoctorList;
-import me.regstudio.pd_app.Activities.HeartRateMeasure.*;
+import me.regstudio.pd_app.Activities.HeartRateMonitor;
 import me.regstudio.pd_app.Activities.MainActivity;
 import me.regstudio.pd_app.Activities.RecordVideo;
 import me.regstudio.pd_app.Activities.SelectDoctor;

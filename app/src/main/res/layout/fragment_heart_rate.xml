@@ -2,54 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="me.regstudio.pd_app.Activities.HeartRateMeasure.HeartRateMonitor">
+    tools:context="me.regstudio.pd_app.Activities.HeartRateMonitor">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/layout">
-        <LinearLayout android:id="@+id/top"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp">
-            <TextView android:id="@+id/text"
-                android:text="@string/heart_rate"
-                android:textSize="32sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </TextView>
-            <RelativeLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
-                <me.regstudio.pd_app.Activities.HeartRateMeasure.HeartbeatView
-                    android:id="@+id/image"
-                    android:layout_centerInParent="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </me.regstudio.pd_app.Activities.HeartRateMeasure.HeartbeatView>
-            </RelativeLayout>
-        </LinearLayout>
-
-
-
-        <SurfaceView android:id="@+id/preview"
-            android:layout_weight="1"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp">
-        </SurfaceView>
-
-        <Button
-            android:id="@+id/submitHeartRate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Done"
-            android:textColor="@color/white"
-            android:background="@color/colorPrimaryDark"
-            />
-    </LinearLayout>
-
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:onClick="app1"
+        android:text="CLICK HERE TO MEASURE YOUR HEART RATE" />
 </FrameLayout>

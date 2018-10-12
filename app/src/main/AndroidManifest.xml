@@ -38,7 +38,7 @@
         <activity android:name=".Activities.SelectDoctor" />
         <activity android:name=".Activities.DoctorList" />
         <activity android:name=".Activities.admin" />
-        <activity android:name=".Activities.HeartRateMeasure.HeartRateMonitor"/>
+        <activity android:name=".Activities.HeartRateMonitor" />
         <activity android:name=".Activities.RegisterUser"></activity>
 
         <meta-data
