@@ -18,7 +18,7 @@
     package="com.ipaulpro.afilechooser" >
 
     <uses-sdk
-        android:minSdkVersion="7"
-        android:targetSdkVersion="7" />
+        android:minSdkVersion="13"
+        android:targetSdkVersion="28" />
 
 </manifest>

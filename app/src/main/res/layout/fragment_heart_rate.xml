@@ -2,9 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="yourteamnumber.seshealthpatient.Fragments.HeartRateFragment">
+    tools:context="me.regstudio.pd_app.Activities.HeartRateMonitor">
 
-    <!-- TODO: Update blank fragment layout -->
-
-
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:onClick="app1"
+        android:text="CLICK HERE TO MEASURE YOUR HEART RATE" />
 </FrameLayout>
