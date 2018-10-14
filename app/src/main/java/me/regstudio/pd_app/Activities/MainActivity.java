@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
     private Button admin;
     public static String DoctorSelectedID;
     public static String fileName;
+    public static String mail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
