@@ -33,6 +33,10 @@ public class Email extends AppCompatActivity {
         mEditTextMessage = findViewById(R.id.edit_text_message);
 
 
+        if (MainActivity.mail != null && !MainActivity.mail.isEmpty()) {
+            mEditTextTo.getText().toString().equals(MainActivity.mail);
+        }
+
         Button buttonSend = findViewById(R.id.button_send);
         buttonSend.setOnClickListener(new View.OnClickListener(){
             @Override
