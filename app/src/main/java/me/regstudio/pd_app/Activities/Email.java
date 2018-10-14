@@ -53,32 +53,14 @@ public class Email extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         intent.putExtra(Intent.EXTRA_TEXT, message);
 
+        // the attachment (MainActivity.fileName is the 'path')
+        if (MainActivity.fileName != null && !MainActivity.fileName.isEmpty()) {
+            intent.putExtra(Intent.EXTRA_STREAM, MainActivity.fileName);
+        }
+
 
         intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent, "Choose an email client"));
     }
 
-
-    public void email(String email) {
-
-
-//        String filename = "";
-//        File filelocation = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), filename);
-//        Uri path = Uri.fromFile(filelocation);
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-
-        // set the type to 'email'
-        emailIntent.setType("vnd.android.cursor.dir/email");
-        String to[] = {email};
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
-
-        // the attachment (MainActivity.fileName is the 'path')
-//        if (MainActivity.fileName != null && !MainActivity.fileName.isEmpty()) {
-//            emailIntent.putExtra(Intent.EXTRA_STREAM, MainActivity.fileName);
-//        }
-
-        // the mail subject
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
-        startActivity(Intent.createChooser(emailIntent, "Send email..."));
-    }
 }
