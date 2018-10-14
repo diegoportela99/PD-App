@@ -108,6 +108,8 @@ public class SendFile extends AppCompatActivity{
                             Toast.makeText(SendFile.this,
                                     "File Selected: " + path, Toast.LENGTH_LONG).show();
                             fileNameTv.setText("Selected file: " + path);
+
+                            MainActivity.fileName = path;
                             Toast.makeText(this, "File Selected!", Toast.LENGTH_SHORT).show();
                         } catch (Exception e) {
                             Log.e("FileSelectorTestActivity", "File select error", e);

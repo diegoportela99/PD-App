@@ -19,10 +19,12 @@
     <string name="facilities_map">Facilities Map</string>
 
     <string-array name="doctors">
-        <item>Doctor 1</item>
-        <item>Doctor 2</item>
-        <item>Doctor 3</item>
-        <item>Doctor 4</item>
+        <item>Diego</item>
+        <item>Slesha</item>
+        <item>Nathan</item>
+        <item>Tanmay</item>
+        <item>Zain</item>
+        <item>Mohammed</item>
     </string-array>
 
     <string name="drawer_open">Drawer Open</string>
