@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -34,8 +35,21 @@ public class Email extends AppCompatActivity {
 
 
         if (MainActivity.mail != null && !MainActivity.mail.isEmpty()) {
-            mEditTextTo.getText().toString().equals(MainActivity.mail);
+            mEditTextTo.setText(MainActivity.mail, TextView.BufferType.EDITABLE);
         }
+
+        if (MainActivity.writing != null && !MainActivity.writing.isEmpty()) {
+            mEditTextMessage.setText(MainActivity.writing, TextView.BufferType.EDITABLE);
+        }
+
+        Button check = findViewById(R.id.CheckB);
+        check.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Email.this, "Attached File: " + MainActivity.fileName,
+                        Toast.LENGTH_LONG).show();
+            }
+        });
 
         Button buttonSend = findViewById(R.id.button_send);
         buttonSend.setOnClickListener(new View.OnClickListener(){
@@ -61,6 +75,7 @@ public class Email extends AppCompatActivity {
         if (MainActivity.fileName != null && !MainActivity.fileName.isEmpty()) {
             intent.putExtra(Intent.EXTRA_STREAM, MainActivity.fileName);
         }
+
 
 
         intent.setType("message/rfc822");

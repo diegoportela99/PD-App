@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
     public static String DoctorSelectedID;
     public static String fileName;
     public static String mail;
+    public static String writing;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

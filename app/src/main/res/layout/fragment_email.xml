@@ -60,5 +60,11 @@
         android:layout_height="wrap_content"
         android:text="FILE SELECTED PREVIOUSLY WILL BE ATTACHED TO THE EMAIL." />
 
+    <Button
+        android:id="@+id/CheckB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CHECK" />
+
 
 </LinearLayout>
