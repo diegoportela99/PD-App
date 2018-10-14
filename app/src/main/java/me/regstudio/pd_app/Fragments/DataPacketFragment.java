@@ -14,6 +14,7 @@ import android.widget.Toast;
 import android.view.View.OnClickListener;
 
 import me.regstudio.pd_app.Activities.DoctorList;
+import me.regstudio.pd_app.Activities.Email;
 import me.regstudio.pd_app.Activities.HeartRate;
 import me.regstudio.pd_app.Activities.MainActivity;
 import me.regstudio.pd_app.Activities.RecordVideo;
@@ -28,6 +29,7 @@ import me.regstudio.pd_app.R;
 public class DataPacketFragment extends Fragment {
 
     private MainActivity obj;
+    private String sendEmail;
 
     public DataPacketFragment() {
         // Required empty public constructor
@@ -126,6 +128,36 @@ public class DataPacketFragment extends Fragment {
                         Toast.LENGTH_LONG).show();
 
 
+
+                //ADD THE EMAILS OF THE DOCTORS HERE>
+                switch (MainActivity.DoctorSelectedID) {
+                    case "Diego":
+                        sendEmail = "diegoportela23@hotmail.com";
+                        break;
+
+                    case "Slesha":
+                        sendEmail = "diegofportela1@gmail.com";
+                        break;
+
+                    case "Nathan":
+
+                        break;
+
+                    case "Tanmay":
+
+                        break;
+
+                    case "Zain":
+
+                        break;
+
+                    case "Mohammed":
+
+                        break;
+                }
+
+                Email m = new Email();
+                m.email(sendEmail);
             }
         });
 
