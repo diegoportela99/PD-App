@@ -130,33 +130,37 @@ public class DataPacketFragment extends Fragment {
 
 
                 //ADD THE EMAILS OF THE DOCTORS HERE>
-                switch (MainActivity.DoctorSelectedID) {
-                    case "Diego":
-                        sendEmail_ = "diegoportela23@hotmail.com";
-                        break;
 
-                    case "Slesha":
-                        sendEmail_ = "diegofportela1@gmail.com";
-                        break;
+                if (MainActivity.DoctorSelectedID != null && !MainActivity.DoctorSelectedID.isEmpty()) {
+                    switch (MainActivity.DoctorSelectedID) {
+                        case "Diego":
+                            sendEmail_ = "diegoportela23@hotmail.com";
+                            break;
 
-                    case "Nathan":
+                        case "Slesha":
+                            sendEmail_ = "diegofportela1@gmail.com";
+                            break;
 
-                        break;
+                        case "Nathan":
 
-                    case "Tanmay":
+                            break;
 
-                        break;
+                        case "Tanmay":
 
-                    case "Zain":
+                            break;
 
-                        break;
+                        case "Zain":
 
-                    case "Mohammed":
+                            break;
 
-                        break;
+                        case "Mohammed":
+
+                            break;
+                    }
+
+                    MainActivity.mail = sendEmail_;
                 }
 
-                MainActivity.mail = sendEmail_;
                 sendEmail();
             }
         });
