@@ -42,6 +42,7 @@
         <activity android:name=".Activities.DoctorLogin" />
         <activity android:name=".Activities.DoctorOptionsPage" />
         <activity android:name=".Activities.ViewDoctors" />
+        <activity android:name=".Activities.Email" />
         <activity android:name=".Activities.MyDetails"></activity>
 
         <meta-data

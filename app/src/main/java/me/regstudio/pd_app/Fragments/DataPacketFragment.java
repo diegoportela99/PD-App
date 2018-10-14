@@ -267,8 +267,8 @@ public class DataPacketFragment extends Fragment {
     }
 
     public void sendEmail() {
-        Intent sendmail = new Intent(getActivity(), Email.class);
-        startActivityForResult(sendmail, 7);
+        Intent SendMail = new Intent(getActivity(), Email.class);
+        startActivityForResult(SendMail, 7);
     }
 
 }
