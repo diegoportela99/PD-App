@@ -29,7 +29,7 @@ import me.regstudio.pd_app.R;
 public class DataPacketFragment extends Fragment {
 
     private MainActivity obj;
-    private String sendEmail;
+    private String sendEmail_;
 
     public DataPacketFragment() {
         // Required empty public constructor
@@ -132,11 +132,11 @@ public class DataPacketFragment extends Fragment {
                 //ADD THE EMAILS OF THE DOCTORS HERE>
                 switch (MainActivity.DoctorSelectedID) {
                     case "Diego":
-                        sendEmail = "diegoportela23@hotmail.com";
+                        sendEmail_ = "diegoportela23@hotmail.com";
                         break;
 
                     case "Slesha":
-                        sendEmail = "diegofportela1@gmail.com";
+                        sendEmail_ = "diegofportela1@gmail.com";
                         break;
 
                     case "Nathan":
@@ -156,8 +156,8 @@ public class DataPacketFragment extends Fragment {
                         break;
                 }
 
-                Email m = new Email();
-                m.email(sendEmail);
+                MainActivity.mail = sendEmail_;
+                sendEmail();
             }
         });
 
@@ -215,8 +215,17 @@ public class DataPacketFragment extends Fragment {
         }
 
         if (requestCode == 6) {
-            if (requestCode == Activity.RESULT_OK) {
+            if (resultCode == Activity.RESULT_OK) {
                 String result = data.getStringExtra("result");
+
+
+            }
+        }
+
+        if (requestCode == 7) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result = data.getStringExtra("result");
+
 
 
             }
@@ -251,6 +260,11 @@ public class DataPacketFragment extends Fragment {
     public void writeMessage() {
         Intent WriteMessage = new Intent(getActivity(), WriteMessage.class);
         startActivityForResult(WriteMessage, 5);
+    }
+
+    public void sendEmail() {
+        Intent sendmail = new Intent(getActivity(), Email.class);
+        startActivityForResult(sendmail, 7);
     }
 
 }

@@ -38,7 +38,6 @@ public class Email extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 sendMail();
-
             }
         });
     }
