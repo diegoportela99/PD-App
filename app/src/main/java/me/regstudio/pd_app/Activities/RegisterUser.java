@@ -14,6 +14,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,6 +34,7 @@ public class RegisterUser extends AppCompatActivity {
     Button register_user;
 
     FirebaseAuth mAuth;
+    FirebaseDatabase database;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,7 +42,7 @@ public class RegisterUser extends AppCompatActivity {
         setContentView(R.layout.activity_register_user);
         ButterKnife.bind(this);
         mAuth = FirebaseAuth.getInstance();
-
+        database = FirebaseDatabase.getInstance();
 
     }
 
@@ -116,7 +119,6 @@ public class RegisterUser extends AppCompatActivity {
 
         if (registerUser() == true)
         {
-
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

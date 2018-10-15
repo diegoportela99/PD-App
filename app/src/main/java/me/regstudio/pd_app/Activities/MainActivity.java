@@ -26,6 +26,11 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import me.regstudio.pd_app.Fragments.DataPacketFragment;
 import me.regstudio.pd_app.Fragments.MapFragment;
 import me.regstudio.pd_app.Fragments.PatientInformationFragment;
@@ -83,6 +88,9 @@ public class MainActivity extends AppCompatActivity {
     /**
      * The current fragment being displayed.
      */
+    private FirebaseDatabase database;
+    private FirebaseAuth firebaseAuth;
+
     private MenuStates currentState;
 
     private Button admin;
@@ -105,6 +113,11 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        database = FirebaseDatabase.getInstance();
+        firebaseAuth = firebaseAuth.getInstance();
+
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+        DatabaseReference myRef = database.getReference();
 
         // Set up the menu button
         ActionBar actionbar = getSupportActionBar();
