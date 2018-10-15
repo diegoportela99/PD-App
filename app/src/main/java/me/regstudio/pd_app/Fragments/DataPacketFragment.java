@@ -127,26 +127,22 @@ public class DataPacketFragment extends Fragment {
                             break;
 
                         case "Slesha":
-                            sendEmail_ = "sleshamishra4@gmail.com";
+                            sendEmail_ = "diegofportela1@gmail.com";
                             break;
 
                         case "Nathan":
-                            sendEmail_="nath.luu1@gmail.com";
 
                             break;
 
                         case "Tanmay":
-                            sendEmail_ ="tanmay.munigala@gmail.com";
 
                             break;
 
                         case "Zain":
-                            sendEmail_="zainsalimuddin@gmail.com";
 
                             break;
 
                         case "Mohammed":
-                            sendEmail_="e7ee777@gmail.com";
 
                             break;
                     }

@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="yourteamnumber.seshealthpatient.Activities.LoginActivity">
+    tools:context="yourteamnumber.seshealthpatient.Activities.LoginActivity"
+    >
 
 
     <Button
@@ -69,23 +70,10 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/imageView"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="88dp"
-        android:layout_marginBottom="18dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="23dp"
         android:backgroundTintMode="multiply"
         android:text="Doctors"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-    <Button
-        android:id="@+id/forgotPassword"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/imageView"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="-76dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTintMode="multiply"
-        android:text="Forgot Password?"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 
