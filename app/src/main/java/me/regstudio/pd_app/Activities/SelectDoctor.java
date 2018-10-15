@@ -34,10 +34,12 @@ public class SelectDoctor extends AppCompatActivity {
         DocButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent returnIntent = getIntent();
-                returnIntent.putExtra("result",1);
-                setResult(RESULT_CANCELED,returnIntent);
-                finish();
+                //Intent returnIntent = getIntent();
+                //returnIntent.putExtra("result",1);
+                //setResult(RESULT_CANCELED,returnIntent);
+                //finish();
+                Intent intent = new Intent(getApplicationContext(), DoctorList.class);
+                startActivity(intent);
             }
         });
     }

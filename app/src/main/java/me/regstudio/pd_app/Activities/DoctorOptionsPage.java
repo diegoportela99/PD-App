@@ -34,6 +34,8 @@ public class DoctorOptionsPage extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.view_patients:
+                Intent intent = new Intent(this, SelectDoctor.class);
+                startActivity(intent);
                 break;
             case R.id.my_details:
                 Intent intent3 = new Intent(this, MyDetails.class);

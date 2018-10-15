@@ -64,7 +64,7 @@ public class DoctorList extends AppCompatActivity/* implements AdapterView.OnIte
 
         database = FirebaseDatabase.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
-        final DatabaseReference doctorReference = database.getReference().child("doctors");
+        final DatabaseReference doctorReference = database.getReference().child("patients");
         doctorReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
