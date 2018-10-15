@@ -21,7 +21,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import me.regstudio.pd_app.Fragments.DataPacketFragment;
 import me.regstudio.pd_app.Fragments.MapFragment;
@@ -150,7 +153,10 @@ public class MainActivity extends AppCompatActivity {
 
                             case R.id.nav_logout:
                                 //add logout code here
-
+                                FirebaseAuth.getInstance().signOut();
+                                Intent logOut = new Intent(MainActivity.this, LoginActivity.class);
+                                startActivityForResult(logOut, 1);
+                                Toast.makeText(MainActivity.this, "User Logged Out!", Toast.LENGTH_SHORT).show();
 
                                 break;
                         }
