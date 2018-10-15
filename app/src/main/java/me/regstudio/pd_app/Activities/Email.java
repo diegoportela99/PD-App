@@ -13,12 +13,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.File;
 
 import me.regstudio.pd_app.R;
 
 
 public class Email extends AppCompatActivity {
+
+    private FirebaseDatabase database;
+    private FirebaseAuth firebaseAuth;
 
     private EditText mEditTextTo;
     private EditText mEditTextSubject;
@@ -29,10 +35,12 @@ public class Email extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_email);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+
         mEditTextTo = findViewById(R.id.edit_text_to);
         mEditTextSubject = findViewById(R.id.edit_text_subject);
         mEditTextMessage = findViewById(R.id.edit_text_message);
-
 
         if (MainActivity.mail != null && !MainActivity.mail.isEmpty()) {
             mEditTextTo.setText(MainActivity.mail, TextView.BufferType.EDITABLE);
