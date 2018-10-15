@@ -64,6 +64,8 @@ public class LoginActivity extends AppCompatActivity {
     ImageView imageView;
     @BindView(R.id.doctor_login)
     Button doctorLogin;
+    @BindView(R.id.forgotPassword)
+    Button forgotPassword;
 
     private FirebaseAuth mAuth;
     private FirebaseUser user;
@@ -124,7 +126,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         if (password.length() < 6) {
-            Toast.makeText(this, "Please enter a password more than 6 words", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter a password more than 6 letters", Toast.LENGTH_SHORT).show();
             return false;
         }
 
@@ -171,5 +173,10 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent2);
     }
 
+    @OnClick(R.id.forgotPassword)
+    public void forgotPassword() {
+        Intent intent12 = new Intent(this, RegisterUser.class);
+        startActivity(intent12);
+    }
 }
 

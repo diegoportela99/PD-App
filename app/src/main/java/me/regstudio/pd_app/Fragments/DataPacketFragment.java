@@ -46,7 +46,6 @@ public class DataPacketFragment extends Fragment {
 
 
         sendFile = (ImageButton) view.findViewById(R.id.SendFileB);
-        recVid = (ImageButton) view.findViewById(R.id.RecB);
         selectDoc = (ImageButton) view.findViewById(R.id.SelectB);
         heartRate = (ImageButton) view.findViewById(R.id.HeartB);
         writeMessage = (ImageButton) view.findViewById(R.id.WriteMessageB);
@@ -76,16 +75,6 @@ public class DataPacketFragment extends Fragment {
             }
         });
 
-        recVid.setOnClickListener(new OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                // click handling code
-                Toast.makeText(getActivity(), "test button",
-                        Toast.LENGTH_LONG).show();
-
-                recordVideo();
-            }
-        });
 
         selectDoc.setOnClickListener(new OnClickListener(){
             @Override
