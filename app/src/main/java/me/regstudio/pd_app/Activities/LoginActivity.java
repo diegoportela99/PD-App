@@ -124,7 +124,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         if (password.length() < 6) {
-            Toast.makeText(this, "Please enter a password more than 6 words", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter a password more than 6 letters", Toast.LENGTH_SHORT).show();
             return false;
         }
 
