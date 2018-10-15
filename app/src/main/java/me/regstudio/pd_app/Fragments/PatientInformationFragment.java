@@ -143,24 +143,29 @@ public class PatientInformationFragment extends Fragment {
         // TODO: Load data from firebase
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
         DatabaseReference databaseReference = database.getReference().child("patients").child(currentUser.getUid());
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                // Retrieve data from Firebase. If null, set to empty.
-                //PatientFile patientFile = dataSnapshot.getValue(PatientFile.class);
-                firstName.setText(dataSnapshot.child("firstName").getValue().toString());
-                lastName.setText(dataSnapshot.child("lastName").getValue().toString());
-                sex.setText(dataSnapshot.child("sex").getValue().toString());
-                age.setText(dataSnapshot.child("age").getValue().toString());
-                height.setText(dataSnapshot.child("height").getValue().toString());
-                weight.setText(dataSnapshot.child("weight").getValue().toString());
-                condition.setText(dataSnapshot.child("condition").getValue().toString());
-            }
+        // Only attempt to pull data if the user is actually logged in
+        if (currentUser != null) {
+            databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    // Retrieve data from Firebase. If null, set to empty.
+                    //PatientFile patientFile = dataSnapshot.getValue(PatientFile.class);
+                    try {
+                        firstName.setText(dataSnapshot.child("firstName").getValue().toString());
+                        lastName.setText(dataSnapshot.child("lastName").getValue().toString());
+                        sex.setText(dataSnapshot.child("sex").getValue().toString());
+                        age.setText(dataSnapshot.child("age").getValue().toString());
+                        height.setText(dataSnapshot.child("height").getValue().toString());
+                        weight.setText(dataSnapshot.child("weight").getValue().toString());
+                        condition.setText(dataSnapshot.child("condition").getValue().toString());
+                    } catch (NullPointerException e) {;}
+                }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
+        }
     }
 
     private void savePatientInfo() {
