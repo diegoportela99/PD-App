@@ -5,30 +5,34 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="yourteamnumber.seshealthpatient.Activities.LoginActivity"
-    android:background="@drawable/back2">
+    android:background='@drawable/back2'>
 
 
     <Button
         android:id="@+id/login_btn"
-        style="@style/LoginStyles"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="134dp"
-        android:text="@string/log_in_txt" />
+        android:layout_marginBottom="130dp"
+        android:text="@string/log_in_txt"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     <Button
         android:id="@+id/register"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="74dp"
-        android:text="Not a Member yet? " />
+        android:text="Not a Member yet? "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <EditText
         android:id="@+id/login_email"
+        style="@android:style/Widget.Material.Light.EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -40,9 +44,11 @@
 
     <EditText
         android:id="@+id/login_password"
+        style="@android:style/Widget.Holo.Light.EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
@@ -54,7 +60,21 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp"
-        android:src="@drawable/app_icon" />
+        android:src="@drawable/app_icon"
+        android:alpha="0.7"/>
+
+    <Button
+        android:id="@+id/doctor_login"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="23dp"
+        android:backgroundTintMode="multiply"
+        android:text="Doctors"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 
 </RelativeLayout>

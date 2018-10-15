@@ -14,6 +14,7 @@ import android.widget.Toast;
 import android.view.View.OnClickListener;
 
 import me.regstudio.pd_app.Activities.DoctorList;
+import me.regstudio.pd_app.Activities.Email;
 import me.regstudio.pd_app.Activities.HeartRate;
 import me.regstudio.pd_app.Activities.MainActivity;
 import me.regstudio.pd_app.Activities.RecordVideo;
@@ -28,6 +29,7 @@ import me.regstudio.pd_app.R;
 public class DataPacketFragment extends Fragment {
 
     private MainActivity obj;
+    private String sendEmail_;
 
     public DataPacketFragment() {
         // Required empty public constructor
@@ -126,6 +128,40 @@ public class DataPacketFragment extends Fragment {
                         Toast.LENGTH_LONG).show();
 
 
+
+                //ADD THE EMAILS OF THE DOCTORS HERE>
+
+                if (MainActivity.DoctorSelectedID != null && !MainActivity.DoctorSelectedID.isEmpty()) {
+                    switch (MainActivity.DoctorSelectedID) {
+                        case "Diego":
+                            sendEmail_ = "diegoportela23@hotmail.com";
+                            break;
+
+                        case "Slesha":
+                            sendEmail_ = "diegofportela1@gmail.com";
+                            break;
+
+                        case "Nathan":
+
+                            break;
+
+                        case "Tanmay":
+
+                            break;
+
+                        case "Zain":
+
+                            break;
+
+                        case "Mohammed":
+
+                            break;
+                    }
+
+                    MainActivity.mail = sendEmail_;
+                }
+
+                sendEmail();
             }
         });
 
@@ -183,8 +219,17 @@ public class DataPacketFragment extends Fragment {
         }
 
         if (requestCode == 6) {
-            if (requestCode == Activity.RESULT_OK) {
+            if (resultCode == Activity.RESULT_OK) {
                 String result = data.getStringExtra("result");
+
+
+            }
+        }
+
+        if (requestCode == 7) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result = data.getStringExtra("result");
+
 
 
             }
@@ -219,6 +264,11 @@ public class DataPacketFragment extends Fragment {
     public void writeMessage() {
         Intent WriteMessage = new Intent(getActivity(), WriteMessage.class);
         startActivityForResult(WriteMessage, 5);
+    }
+
+    public void sendEmail() {
+        Intent SendMail = new Intent(getActivity(), Email.class);
+        startActivityForResult(SendMail, 7);
     }
 
 }

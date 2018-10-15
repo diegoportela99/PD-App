@@ -41,17 +41,13 @@ public class DoctorList extends AppCompatActivity implements AdapterView.OnItemS
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
         Toast.makeText(parent.getContext(), text, Toast.LENGTH_LONG).show();
+
+        setDoc(text);
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
         
-    }
-
-    //Adds an item to the list
-    private void AddDoctor() {
-
-
     }
 
 
