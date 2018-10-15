@@ -19,6 +19,7 @@
         android:layout_marginEnd="8dp"
         android:text="@string/edit_info_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LinearLayout_condition" />
@@ -40,7 +41,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/patient_condition" />
+            android:text="@string/patient_condition"
+            android:textColor="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/edit_condition"
@@ -70,7 +72,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/patient_weight" />
+            android:text="@string/patient_weight"
+            android:textColor="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/edit_weight"
@@ -99,7 +102,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/patient_height" />
+            android:text="@string/patient_height"
+            android:textColor="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/edit_height"
@@ -128,7 +132,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/patient_age" />
+            android:text="@string/patient_age"
+            android:textColor="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/edit_age"
@@ -157,7 +162,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/patient_sex" />
+            android:text="@string/patient_sex"
+            android:textColor="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/edit_sex"
@@ -190,7 +196,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/patient_first_name" />
+            android:text="@string/patient_first_name"
+            android:textColor="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/edit_first_name"
@@ -221,7 +228,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/patient_last_name" />
+            android:text="@string/patient_last_name"
+            android:textColor="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/edit_last_name"
