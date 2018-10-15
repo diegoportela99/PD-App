@@ -63,6 +63,8 @@ public class WriteMessage extends AppCompatActivity {
             throw new InvalidMessageException("Invalid message: Cannot add an empty message.", 1);
         }
         // TODO: Actual writing to data packet occurs here.
+
+        MainActivity.writing = message;
     }
 
     @OnClick(R.id.add_message_button)

@@ -48,11 +48,4 @@ public class SelectDoctor extends AppCompatActivity {
     }
 
 
-    //if backbutton pressed, then use this method bellow
-//            Intent returnIntent = getIntent();
-//            returnIntent.putExtra("result",1);
-//            setResult(RESULT_OK,returnIntent);
-//            finish();
-
-
 }
