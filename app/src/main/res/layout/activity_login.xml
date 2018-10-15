@@ -70,10 +70,22 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/imageView"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="23dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="19dp"
         android:backgroundTintMode="multiply"
         android:text="Doctors"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <Button
+        android:id="@+id/forgotPassword"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/doctor_login"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-3dp"
+        android:layout_marginEnd="31dp"
+        android:text="Forgot Password?"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 

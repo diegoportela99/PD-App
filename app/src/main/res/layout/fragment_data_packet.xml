@@ -13,9 +13,10 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
-        android:text="Send To doctor"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:layout_marginTop="16dp"
+        android:text="Add Info and select doctors here"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,8 +25,8 @@
         android:id="@+id/HeartB"
         android:layout_width="66dp"
         android:layout_height="61dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="123dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="36dp"
         android:background="@android:color/background_light"
         android:scaleType="fitXY"
         android:src="@drawable/heartpic"
@@ -36,13 +37,14 @@
         android:id="@+id/WriteMessageB"
         android:layout_width="66dp"
         android:layout_height="61dp"
-        android:layout_marginEnd="75dp"
         android:layout_marginStart="101dp"
-        android:layout_marginTop="123dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="75dp"
         android:background="@android:color/background_light"
         android:scaleType="fitXY"
         android:src="@drawable/writepic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.687"
         app:layout_constraintStart_toEndOf="@+id/HeartB"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -62,14 +64,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/HeartB"
-        app:layout_constraintVertical_bias="0.371" />
+        app:layout_constraintVertical_bias="0.343" />
 
     <ImageButton
         android:id="@+id/SelectB"
         android:layout_width="69dp"
         android:layout_height="64dp"
         android:layout_marginTop="56dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginEnd="60dp"
         android:layout_marginBottom="8dp"
         android:background="@android:color/background_light"
         android:scaleType="fitXY"
@@ -77,7 +79,7 @@
         app:layout_constraintBottom_toTopOf="@+id/SendInfoB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/WriteMessageB"
-        app:layout_constraintVertical_bias="0.155" />
+        app:layout_constraintVertical_bias="0.254" />
 
     <ImageButton
         android:id="@+id/SendInfoB"

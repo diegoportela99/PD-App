@@ -20,8 +20,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         app:layout_constraintBottom_toTopOf="@+id/map"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_details" />
+        app:layout_constraintTop_toBottomOf="@+id/my_details"
+        app:layout_constraintVertical_bias="0.636" />
 
     <Button
         android:id="@+id/my_details"
@@ -30,8 +32,8 @@
         android:layout_height="78dp"
         android:text="My Details"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="175dp" />
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="77dp" />
 
     <Button
         android:id="@+id/map"

@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -94,10 +93,10 @@ public class RegisterUser extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(), "Registration Sucessful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Sucessful", Toast.LENGTH_SHORT).show();
 
                         } else {
-                            Toast.makeText(getApplicationContext(), "Registration Unsucessful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Unsucessful", Toast.LENGTH_SHORT).show();
 
                         }
                     }
@@ -124,7 +123,7 @@ public class RegisterUser extends AppCompatActivity {
 
             //startActivity(new Intent(this, MainActivity.class));
             //Intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            Toast.makeText(getApplicationContext(), "Registration Successful", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Successful", Toast.LENGTH_SHORT).show();
         }
     }
 
