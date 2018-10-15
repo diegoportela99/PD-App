@@ -33,6 +33,7 @@
         android:layout_marginEnd="36dp"
         android:text="Select Your Desired Doctor "
         android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

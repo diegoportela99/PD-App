@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,7 +21,7 @@ public class DoctorOptionsPage extends AppCompatActivity {
     @BindView(R.id.my_details)
     Button myDetails;
     @BindView(R.id.map)
-    Button map;
+    Button logOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,10 @@ public class DoctorOptionsPage extends AppCompatActivity {
                 startActivity(intent3);
                 break;
             case R.id.map:
+                FirebaseAuth.getInstance().signOut();
+                Intent logOut = new Intent(this, DoctorLogin.class);
+                startActivityForResult(logOut, 1);
+                Toast.makeText(this, "User Logged Out!", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
