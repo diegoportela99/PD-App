@@ -11,20 +11,22 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text = "To"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+        android:text="To"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
     <EditText
         android:id="@+id/edit_text_to"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Please Write down the Doctors Email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text = "Subject"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+        android:text="Subject"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
     <EditText
         android:id="@+id/edit_text_subject"
@@ -36,7 +38,8 @@
         android:id="@+id/textView"
         android:layout_width="352dp"
         android:layout_height="wrap_content"
-        android:text="Please State Current Location and Heart Rate BPM." />
+        android:text="Please State Current Location and Heart Rate BPM."
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     <EditText
         android:id="@+id/edit_text_message"
@@ -47,24 +50,28 @@
         />
 
 
-
     <Button
         android:id="@+id/button_send"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text = "send"/>
+        android:text="Send"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="FILE SELECTED PREVIOUSLY WILL BE ATTACHED TO THE EMAIL." />
+        android:text="FILE SELECTED PREVIOUSLY WILL BE ATTACHED TO THE EMAIL."
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
     <Button
         android:id="@+id/CheckB"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CHECK" />
+        android:text="CHECK"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 
 </LinearLayout>
