@@ -33,8 +33,8 @@ public class DoctorOptionsPage extends AppCompatActivity {
             case R.id.view_patients:
                 break;
             case R.id.my_details:
-                Intent intent3 = new Intent(this, MyDetails.class);
-                startActivity(intent3);
+                Intent myDetail = new Intent(this, MyDetails.class);
+                startActivity(myDetail);
                 break;
             case R.id.map:
                 break;
