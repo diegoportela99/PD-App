@@ -55,4 +55,8 @@
     <string name="add_message">Add message</string>
     <string name="edit_message_hint">Tap to edit</string>
     <string name="char_count_text">Length: 0 characters</string>
+
+    <!-- Strings for the Doctor details (My Details) -->
+    <string name="doctor_specialty">Specialty</string>
+    <string name="hint_doctor_specialty">Enter your specialty</string>
 </resources>
