@@ -64,6 +64,8 @@ public class LoginActivity extends AppCompatActivity {
     ImageView imageView;
     @BindView(R.id.doctor_login)
     Button doctorLogin;
+    @BindView(R.id.forgotPassword)
+    Button forgotPassword;
 
     private FirebaseAuth mAuth;
     private FirebaseUser user;
@@ -171,5 +173,10 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent2);
     }
 
+    @OnClick(R.id.forgotPassword)
+    public void forgotPassword() {
+        Intent intent12 = new Intent(this, RegisterUser.class);
+        startActivity(intent12);
+    }
 }
 
