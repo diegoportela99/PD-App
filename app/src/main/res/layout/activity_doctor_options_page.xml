@@ -10,30 +10,30 @@
     <Button
         android:id="@+id/view_patients"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="304dp"
+        android:layout_height="87dp"
         android:layout_marginStart="38dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="38dp"
         android:layout_marginBottom="38dp"
         android:text="View Patients "
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/map"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_details"
-        app:layout_constraintVertical_bias="0.636" />
+        app:layout_constraintVertical_bias="0.32" />
 
     <Button
         android:id="@+id/my_details"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="78dp"
+        android:layout_marginTop="32dp"
         android:text="My Details"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="77dp" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        tools:layout_editor_absoluteX="97dp" />
 
     <Button
         android:id="@+id/map"
@@ -43,14 +43,25 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="135dp"
-        android:layout_marginBottom="74dp"
+        android:layout_marginBottom="72dp"
         android:text="Map"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ok_db" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="95dp"
+        android:layout_height="133dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/doclogo"
+        tools:layout_editor_absoluteY="18dp" />
 </android.support.constraint.ConstraintLayout>
 
 
