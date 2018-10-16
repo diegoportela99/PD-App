@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SESHEalthApplication</string>
+    <string name="app_name">SESHealthApplication</string>
     <string name="username_txt">Username</string>
     <string name="email_example_com">email@example.com</string>
     <string name="password_txt">Password</string>
